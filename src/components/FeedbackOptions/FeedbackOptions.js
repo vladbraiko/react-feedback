@@ -1,11 +1,12 @@
 import React from "react";
 import Proptypes from "prop-types";
+import styles from "./FeedbackOptions.module.css";
 
 function FeedbackOptions({ options, onAddFeedback }) {
   const buttons = Object.keys(options).map((option) => {
     return (
       <button
-        className="button"
+        className={styles.button}
         key={option}
         onClick={() => onAddFeedback(option)}
       >
@@ -14,7 +15,7 @@ function FeedbackOptions({ options, onAddFeedback }) {
     );
   });
 
-  return <div className="buttons-container">{buttons}</div>;
+  return <>{buttons}</>;
 }
 
 FeedbackOptions.propTypes = {
